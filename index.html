@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda - Alejandro y Yoselin</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/LG.ico" type="image/LG-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3e9d2; 
+            color: #4b3832;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/BG%20B.png'); 
+            background-attachment: fixed; 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+        }
+
+        .font-noto-serif {
+            font-family: 'Noto Serif', serif;
+        }
+
+        .scroll-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            will-change: opacity, transform;
+            text-align: center;
+
+            max-width: 600px; /* Define el ancho MÁXIMO */
+            width: 100%;       /* Ocupa el 100% del espacio disponible HASTA el máximo */
+            margin-left: auto;   /* Centra la sección horizontalmente */
+            margin-right: auto;
+        }
+
+        .section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-great-vibes {
+            font-family: 'Great Vibes', cursive;
+        }
+
+
+        .btn {
+            display: inline-block;
+            background-color: #7c0000;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px; /* Cambio: Uso de un valor grande para esquinas completamente redondeadas */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #967554;
+            transform: translateY(-2px);
+        }
+
+        .icon-small {
+            width: 40px;
+            height: 40px;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #7c0000;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #4b3832;
+            margin-top: 0.25rem;
+        }
+
+        .image-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .play-pause-btn {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .play-pause-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Limpiamos la clase para que ya no sea un recuadro */
+        .container-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        
+        /* Aplicamos el fondo a h1 */
+        #seccion-invitado {
+            background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/2.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #seccion-padres {
+            background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/3.png');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        #seccion-contador {
+            background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/4.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #seccion-buzon {
+            background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/5.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #seccion-canciones {
+            background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/6.png');
+            background-size: cover;
+            background-position: center;
+        }
+        #seccion-confirmacion {
+            background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/7.4.png');
+            background-size: cover;
+            background-position: center;
+        }   
+        #seccion-agradecimiento {
+            background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/8.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .imagen-completa {
+            width: 100vw;
+            height: 65vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+
+
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Sección Principal de Nombres y Bienvenida -->
+    <div class="h-screen w-full flex flex-col justify-end items-center text-center p-4 pb-10 bg-cover bg-top md:bg-center" style="background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/Portada%20AY%20Mob.png');">
+
+        <button id="playPauseBtn" class="play-pause-btn mt-1 h-[2.15rem] w-[1.60rem] bg-white/0 rounded-full focus:outline-none focus:ring-1 focus:ring-white transition-opacity [&.is-playing]:opacity-90">
+        </button>
+
+
+        <audio id="weddingSong" src="https://www.dropbox.com/scl/fi/xg7sq1r7zhxti1rrfockn/Harold-y-Elena-Por-siempre-Videoclip-Oficial.mp3?rlkey=8mgs5xbtlq5i7k408h53qhijt&st=xdu3r3g5&dl=1" loop></audio>
+
+    </div>
+
+
+    <!-- Sección de la Historia -->
+    <div class="scroll-section">
+        <div id="seccion-invitado" class="container-section">
+            <p class="font-noto-serif italic text-gray-700 max-w-lg mx-auto">
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+            </p>
+
+            <p class="font-noto-serif italic text-[12px] text-gray-700 max-w-lg mx-auto">
+                ㅤ
+            </p>
+            <p class="font-noto-serif italic text-[11px] text-gray-700 max-w-lg mx-auto container-section">
+                ㅤ
+                <br>ㅤ
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Sección de Imagen de los Padres -->
+    <div class="scroll-section">
+        <div id="seccion-padres" class="container-section">
+            <h2 class="text-5xl text-great-vibes mb-3 text-[#7c0000]">ㅤ</h2>
+            <p class="font-noto-serif italic text-gray-700 max-w-lg mx-auto">
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+            </p>
+
+            <p class="font-noto-serif italic text-[12px] text-gray-700 max-w-lg mx-auto">
+                ㅤ
+            </p>
+            <p class="font-noto-serif italic text-[11px] text-gray-700 max-w-lg mx-auto container-section">
+                ㅤ
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Sección de Evento -->
+    <div class="scroll-section">
+        <div id="seccion-contador" class="container-section">
+            <h2 class="text-5xl text-great-vibes mb-3 text-[#7c0000]">ㅤ</h2>
+            <p class="font-noto-serif italic text-gray-700 max-w-lg mx-auto">
+                <br>ㅤ
+                <br>ㅤ
+            </p>
+
+            <!-- Contador de tiempo -->
+            <div class="flex justify-center text-great-vibes space-x-5 md:space-x-13 ">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                </div>
+            </div>
+
+            <p>
+                ㅤ
+            </p>
+
+
+            <div class="w-full flex justify-center">
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Yoselin+%26+Alejandro&dates=20251108T000000Z/20251108T020000Z&details=Acomp%C3%A1%C3%B1anos+en+este+hermoso+momento%2C+el+cual+queremos+que+seas+parte+junto+a+nosotros.&location=&sf=true&output=xml" target="_blank">
+                    <img src="https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/B1.png"
+                         alt="Botón para ver la ubicación en el mapa"
+                         class="w-48 h-auto cursor-pointer transition-transform hover:scale-110">
+                </a>
+            </div>
+
+            <p>
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+
+            </p>
+        </div>
+        <!-- Sección de Ubicación y Botones -->
+        <div class="w-full flex justify-center">
+            <a href="https://maps.app.goo.gl/7aboVnaacWG62kaS9" target="_blank">
+                <img src="https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/Bt2.png"
+                     alt="Botón para ver la ubicación en el mapa"
+                     class="w-48 h-auto cursor-pointer transition-transform hover:scale-110">
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Sección de Buzón de deseos -->
+    <div class="scroll-section">
+        <div id="seccion-buzon" class="container-section">
+            <h2 class="text-5xl text-great-vibes mb-3 text-[#7c0000]">ㅤ</h2>
+            <p class="mb-4">
+                ㅤ
+                <br>ㅤ
+            </p>
+            <!-- Reemplazar # con el enlace al formulario externo para el buzón de deseos -->
+            <div class="w-full flex justify-center">
+                <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAa__QpPoeBUQjY2SElNVzJITlc0TVI4MUNVM1NMWVdGSC4u" target="_blank">
+                    <img src="https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/B3.png"
+                         alt="Botón para ver la ubicación en el mapa"
+                         class="w-48 h-auto cursor-pointer transition-transform hover:scale-110">
+                </a>
+            </div>
+            <p>
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+            </p>
+        </div>
+    </div>
+
+    <!-- Sección de Canciones -->
+    <div class="scroll-section">
+        <div id="seccion-canciones" class="container-section">
+            <h2 class="text-5xl text-great-vibes mb-3 text-[#7c0000]">ㅤ</h2>
+            <p class="mb-4">
+                ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+            </p>
+
+            <!-- Cancion y Albun -->
+
+            <div class="w-full flex justify-center">
+                <a href="https://padlet.com/rivasalejandro1604/cu-les-son-las-canciones-que-no-pueden-faltar-en-nuestra-bod-yx7o4r6iakbx3wdi" target="_blank">
+                    <img src="https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/B4.png"
+                         alt="Botón para ver la ubicación en el mapa"
+                         class="w-48 h-auto cursor-pointer transition-transform hover:scale-110">
+                </a>
+            </div>
+            <p>
+
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+                <br>ㅤ
+            </p>
+
+            <div class="w-full flex justify-center">
+                <a href="https://photos.app.goo.gl/gtUHNqivz37DU3pFA" target="_blank">
+                    <img src="https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/B5.png"
+                         alt="Botón para ver la ubicación en el mapa"
+                         class="w-48 h-auto cursor-pointer transition-transform hover:scale-110">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección confirmacion y nombre -->
+    <div class="scroll-section">
+        <div id="seccion-confirmacion" class="container-section">
+            <h2 class="text-5xl text-great-vibes mb-3 text-[#7c0000]">ㅤ</h2>
+
+            <!-- Espaciado inicial -->
+            <br>ㅤ<br>ㅤ<br>ㅤ<br>ㅤ<br>ㅤ<br>ㅤ<br>ㅤ<br>
+
+            <!-- Nombre personalizado -->
+            <p id="nombre-personalizado" class="text-great-vibes text-[#7c0000] text-5xl mb-6"></p>
+
+            <!-- Texto "Tenemos reservados" -->
+            <p class="font-noto-serif italic text-gray-700 text-2xl mb-4">Tenemos reservados</p>
+
+            <!-- Número de cupos -->
+            <p id="solo-numero-cupos" class="text-great-vibes text-[#7c0000] text-6xl mb-4"></p>
+
+            <!-- Texto "Lugares para ustedes" -->
+            <p class="font-noto-serif italic text-gray-700 text-2xl mb-8">Lugares para ustedes</p>
+
+            <!-- Texto de confirmación -->
+            <p class="font-noto-serif text-gray-700 max-w-md mx-auto mb-6 leading-relaxed">
+                Nos encantaría contar con tu presencia, por favor confirma tu asistencia antes del 15 de Octubre de 2,025.
+            </p>
+
+            <!-- BOTÓN -->
+            <div class="w-full flex justify-center mb-8">
+                <a href="https://wa.link/xcr0td" target="_blank">
+                    <img src="https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/B6.png"
+                         alt="Botón para confirmar asistencia"
+                         class="w-48 h-auto cursor-pointer transition-transform hover:scale-110">
+                </a>
+            </div>
+
+            <!-- Versículo bíblico -->
+            <p class="font-noto-serif italic text-gray-600 text-sm max-w-md mx-auto mb-3 leading-relaxed">
+                Mejores son dos que uno; porque tienen mejor paga de su trabajo. Porque si cayeren, el uno levantará a su compañero; pero ¡ay del solo! que cuando cayere, no habrá segundo que lo levante.
+            </p>
+            <p class="font-noto-serif text-gray-600 text-sm">Eclesiastés 4:9-10 RV60</p>
+
+        </div>
+    </div>
+
+    <div class="scroll-section">
+        <div class="imagen-completa" style="background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/8.png');">
+        </div>
+    </div>
+
+    <div class="scroll-section">
+        <div class="imagen-completa" style="background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/9.png');">
+        </div>
+    </div>
+
+    <div class="scroll-section">
+        <div class="imagen-completa" style="background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/10.png');">
+        </div>
+    </div>
+
+    <div class="scroll-section">
+        <div class="imagen-completa" style="background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/11.png');">
+        </div>
+
+        <div class="scroll-section">
+            <div class="imagen-completa" style="background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/12.png');">
+            </div>
+
+            <div class="scroll-section">
+                <div class="imagen-completa" style="background-image: url('https://raw.githubusercontent.com/Aleg160/Imgbod/refs/heads/main/13.png');">
+                </div>
+
+                <script>
+                    // Lógica de JavaScript para el efecto de scroll
+                    const scrollElements = document.querySelectorAll('.scroll-section');
+
+                    const elementInView = (el, dividend = 1) => {
+                        const elementTop = el.getBoundingClientRect().top;
+                        return (
+                            elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+                        );
+                    };
+
+                    const displayScrollElement = (element) => {
+                        element.classList.add('section-visible');
+                    };
+
+                    const handleScrollAnimation = () => {
+                        scrollElements.forEach((el) => {
+                            if (elementInView(el, 1.25)) {
+                                displayScrollElement(el);
+                            }
+                        });
+                    };
+
+                    window.addEventListener('scroll', handleScrollAnimation);
+                    document.addEventListener('DOMContentLoaded', handleScrollAnimation);
+
+                    // Lógica para el contador de tiempo
+                    const countdown = () => {
+                        const eventDate = new Date('Nov 8, 2025 15:00:00').getTime();
+                        const now = new Date().getTime();
+                        const distance = eventDate - now;
+
+                        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                        document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+                        document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+                        document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+                        document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+
+                        if (distance < 0) {
+                            clearInterval(countdownInterval);
+                            document.getElementById('countdown').innerHTML = "¡El evento ha comenzado!";
+                        }
+                    };
+
+                    const countdownInterval = setInterval(countdown, 1000);
+                    countdown();
+
+                    // Función para leer parámetros de URL
+                    function obtenerParametroURL(nombre) {
+                        const urlParams = new URLSearchParams(window.location.search);
+                        return urlParams.get(nombre);
+                    }
+
+                    // Personalizar contenido cuando carga la página
+                    window.addEventListener('DOMContentLoaded', function () {
+                        const nombreInvitado = obtenerParametroURL('nombre');
+                        const cuposDisponibles = obtenerParametroURL('cupos');
+
+                        if (nombreInvitado) {
+                            document.getElementById('nombre-personalizado').textContent = nombreInvitado.replace(/_/g, ' ');
+                        }
+
+                        if (cuposDisponibles) {
+                            document.getElementById('solo-numero-cupos').textContent = cuposDisponibles;
+                        }
+                    });
+
+                    // Lógica para reproducir/pausar la música
+                    const weddingSong = document.getElementById('weddingSong');
+                    const playPauseBtn = document.getElementById('playPauseBtn');
+                    let isPlaying = false;
+
+                    playPauseBtn.addEventListener('click', () => {
+                        if (isPlaying) {
+                            weddingSong.pause();
+                        } else {
+                            weddingSong.play();
+                        }
+                        isPlaying = !isPlaying;
+                    });
+                </script>
+</body>
+</html>
